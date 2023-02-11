@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +13,6 @@
     <style>
     </style>
 </head>
-
 <body>
 
     <div class="container m-5 p-5 border border-danger border-2">
@@ -36,9 +34,9 @@
 
         <div class="container text-center border border-danger border-2 mt-5">
             <h1 class="Display-1">Result</h1>
+            <h1 id="result0">Not Assign</h1>
             <h1 id="result1">Not Assign</h1>
             <h1 id="result2">Not Assign</h1>
-            <h1 id="result3">Not Assign</h1>
         </div>
     </div>
 
@@ -66,22 +64,28 @@
             document.getElementById("user2").value = ""
             document.getElementById("user3").value = ""
 
-            document.getElementById("result1").innerHTML = myArry[0]
-            document.getElementById("result2").innerHTML = myArry[1]
-            document.getElementById("result3").innerHTML = myArry[2]
+            document.getElementById("result0").innerHTML = myArry[0]
+            document.getElementById("result0").style.color = "blue"
+            document.getElementById("result1").innerHTML = myArry[1]
+            document.getElementById("result1").style.color = "blue"
+            document.getElementById("result2").innerHTML = myArry[2]
+            document.getElementById("result2").style.color = "blue"
         }
 
         function delt() {
             let user = prompt("Enter Index You want to delte")
             delete myArry[user];
             if (user == 0) {
-                document.getElementById("result1").style.color = "red"
+                document.getElementById("result0").style.color = "red"
+                document.getElementById("result0").innerHTML = "Deleted"
             }
             else if (user == 1) {
-                document.getElementById("result2").style.color = "red"
+                document.getElementById("result1").style.color = "red"
+                document.getElementById("result1").innerHTML = "Deleted"
             }
             else if (user == 2) {
-                document.getElementById("result3").style.color = "red"
+                document.getElementById("result2").style.color = "red"
+                document.getElementById("result2").innerHTML = "Deleted"
             }
             else{
                 console.log("invalid Index")
@@ -92,6 +96,8 @@
             let user = prompt("Enter Index You want to update")
             let user_set = prompt("Enter Value")
             myArry[user] = user_set
+            document.getElementById(`result${user}`).innerHTML = myArry[user]; 
+            document.getElementById(`result${user}`).style.color = "Green";
             console.log(myArry + "Updated")
         }
 
