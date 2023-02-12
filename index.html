@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,22 +14,25 @@
     <style>
     </style>
 </head>
+
 <body>
 
-    <div class="container m-5 p-5 border border-danger border-2">
-        <input type="text" id="user1" placeholder="Index number 0">
-        <br>
-        <br>
-        <input type="text" id="user2" placeholder="Index number 1">
-        <br>
-        <br>
-        <input type="text" id="user3" placeholder="Index number 2">
-        <br>
-        <div class="contianer mt-5">
-            <button class="btn btn-primary" id="btnC" onclick="store()">Store</button>
-            <button class="btn btn-danger" id="btnD" onclick="delt()">Delete</button>
-            <button class="btn btn-success" id="btnU" onclick="updt()">Update</button>
-        </div>
+    <div class="container mt-3 p-5 border border-danger border-5">
+        <center> <input type="text" id="user1" placeholder="Index number 0">
+            <br>
+            <br>
+            <input type="text" id="user2" placeholder="Index number 1">
+            <br>
+            <br>
+            <input type="text" id="user3" placeholder="Index number 2">
+            <br>
+            <div class="contianer mt-5">
+                <button class="btn btn-primary" id="btnC" onclick="store()">Store</button>
+                <button class="btn btn-danger" id="btnD" onclick="delt()">Delete</button>
+                <button class="btn btn-success" id="btnU" onclick="updt()">Update</button>
+            </div>
+        </center>
+
 
 
 
@@ -87,7 +91,7 @@
                 document.getElementById("result2").style.color = "red"
                 document.getElementById("result2").innerHTML = "Deleted"
             }
-            else{
+            else {
                 console.log("invalid Index")
             }
 
@@ -96,7 +100,7 @@
             let user = prompt("Enter Index You want to update")
             let user_set = prompt("Enter Value")
             myArry[user] = user_set
-            document.getElementById(`result${user}`).innerHTML = myArry[user]; 
+            document.getElementById(`result${user}`).innerHTML = myArry[user];
             document.getElementById(`result${user}`).style.color = "Green";
             console.log(myArry + "Updated")
         }
